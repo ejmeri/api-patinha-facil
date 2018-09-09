@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define("Adption", {
+    return sequelize.define("Adoption", {
         id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
