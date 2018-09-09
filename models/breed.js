@@ -1,22 +1,15 @@
 module.exports = function (sequelize, DataTypes) {
-    return sequelize.define("People", {
+    return sequelize.define("Breed", {
         id: {
             type: DataTypes.BIGINT,
             primaryKey: true,
             autoIncrement: true
         },
         name: {
-            type: DataTypes.STRING(120),
-			allowNull: false
-        },
-		nickname: {
-			type: DataTypes.STRING(45)
-		},
-		cpfcnpj: {
-            type: DataTypes.STRING(14),
+            type: DataTypes.STRING(45),
             allowNull: false
         },
-        user_id: {
+        specie_id: {
             type: DataTypes.BIGINT
         }
     });

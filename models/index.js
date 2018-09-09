@@ -12,10 +12,31 @@ if(!global.hasOwnProperty('db')) {
 
 
         User: sequelize.import(__dirname + '/user'),
-        People: sequelize.import(__dirname + '/people')
+        Person: sequelize.import(__dirname + '/person'),
+        Gender: sequelize.import(__dirname + '/gender'),
+        Specie: sequelize.import(__dirname + '/specie'),
+        Breed: sequelize.import(__dirname + '/breed'),
+        Coat: sequelize.import(__dirname + '/coat'),
+        Care: sequelize.import(__dirname + '/care'),
+        Animal: sequelize.import(__dirname + '/animal'),
+        Contact: sequelize.import(__dirname + '/contact'),
+        AnimalImage: sequelize.import(__dirname + '/animalimage'),
+        PersonType: sequelize.import(__dirname + '/persontype'),
+        PersonAnimal: sequelize.import(__dirname + '/personanimal'),
+        
     }
 
-    global.db.User.hasMany(global.db.People);
+    global.db.PersonType.hasMany(global.db.PersonAnimal);
+    global.db.Person.hasMany(global.db.PersonAnimal);
+    global.db.Animal.hasMany(global.db.PersonAnimal);
+    global.db.Person.hasMany(global.db.Contact);
+    global.db.User.hasMany(global.db.Person);
+    global.db.Specie.hasMany(global.db.Breed);
+    global.db.Breed.hasMany(global.db.Animal);
+    global.db.Gender.hasMany(global.db.Animal);
+    global.db.Coat.hasMany(global.db.Animal);
+    global.db.Care.hasMany(global.db.Animal);
+    global.db.Animal.hasMany(global.db.AnimalImage);
 
 }
 
