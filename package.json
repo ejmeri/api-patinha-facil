@@ -1,0 +1,19 @@
+{
+  "name": "pfservice",
+  "version": "1.0.0",
+  "description": "service patinha_facil",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "elmerisilva@hotmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.0",
+    "consign": "^0.1.6",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mysql2": "^1.6.1",
+    "sequelize": "^4.38.0"
+  }
+}
