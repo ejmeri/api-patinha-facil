@@ -1,5 +1,5 @@
 module.exports = {
-    database: 'dbpet',
+    database: 'db_pet',
     username: 'root',
     password: '', 
     params: {
