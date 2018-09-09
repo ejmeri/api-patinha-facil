@@ -23,9 +23,18 @@ if(!global.hasOwnProperty('db')) {
         AnimalImage: sequelize.import(__dirname + '/animalimage'),
         PersonType: sequelize.import(__dirname + '/persontype'),
         PersonAnimal: sequelize.import(__dirname + '/personanimal'),
-        
+        State: sequelize.import(__dirname + '/address/state'),
+        City: sequelize.import(__dirname + '/address/city'),
+        Ddd: sequelize.import(__dirname + '/address/ddd'),
+        Address: sequelize.import(__dirname + '/address'),
+        Adoption: sequelize.import(__dirname + '/adoption'),
     }
 
+    global.db.PersonAnimal.hasMany(global.db.Adoption);
+    global.db.Person.hasMany(global.db.Address);
+    global.db.Ddd.hasMany(global.db.Address);
+    global.db.State.hasMany(global.db.Ddd);
+    global.db.State.hasMany(global.db.City);
     global.db.PersonType.hasMany(global.db.PersonAnimal);
     global.db.Person.hasMany(global.db.PersonAnimal);
     global.db.Animal.hasMany(global.db.PersonAnimal);
