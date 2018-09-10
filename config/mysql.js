@@ -1,7 +1,7 @@
 module.exports = {
     database: 'db_pet',
     username: 'root',
-    password: '', 
+    password: 'root', 
     params: {
         host:  'localhost',
         port: '3306',
